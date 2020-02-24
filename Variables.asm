@@ -190,8 +190,12 @@ f_sonframechg:	equ $FFFFF767	; flag set to update Sonic's sprite frame
 v_anglebuffer:	equ $FFFFF768	; angle of collision block that Sonic or object is standing on
 
 v_opl_routine:	equ $FFFFF76C	; ObjPosLoad - routine counter
-v_opl_screen:	equ $FFFFF76E	; ObjPosLoad - screen variable
-v_opl_data:	equ $FFFFF770	; ObjPosLoad - data buffer ($10 bytes)
+v_opl_x_rounded:	equ $FFFFF76E	; ObjPosLoad - last camera x position rounded to 128px
+v_opl_addr:	equ $FFFFF770	; ObjPosLoad - load addresses ($10 bytes)
+v_opl_right_addr:	equ	v_opl_addr		; address of object entry to the left of the screen
+v_opl_left_addr:	equ	v_opl_addr+4	; address of object entry to the right of the screen
+v_opl_right_addr2:	equ	v_opl_addr+8	; for secondary placement, written and unused
+v_opl_left_addr2:	equ	v_opl_addr+$C	; for secondary placement, written and unused
 
 v_ssangle:	equ $FFFFF780	; Special Stage angle (2 bytes)
 v_ssrotate:	equ $FFFFF782	; Special Stage rotation speed (2 bytes)
